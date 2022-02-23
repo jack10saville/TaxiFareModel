@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 
 from TaxiFareModel.data import get_data, clean_df, DIST_ARGS
-from TaxiFareModel.utils import haversine_vectorized, minkowski_distance
+from TaxiFareModel.data.utils import haversine_vectorized, minkowski_distance
 import pygeohash as gh
 
 

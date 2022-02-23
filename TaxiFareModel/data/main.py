@@ -4,7 +4,7 @@ from pprint import pprint
 from termcolor import colored
 
 from TaxiFareModel.data import clean_df, get_data
-from TaxiFareModel.trainer import Trainer
+from TaxiFareModel.data.trainer import Trainer
 
 default_params = dict(nrows=40000,
                       upload=False,
