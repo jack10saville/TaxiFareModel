@@ -1,0 +1,15 @@
+artifact_uri: file:///home/jack10saville/code/jack10saville/TaxiFareModel/mlruns/1/d67bf16d611741e4837e8fc40ae3333e/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: d67bf16d611741e4837e8fc40ae3333e
+run_uuid: d67bf16d611741e4837e8fc40ae3333e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1645615824411
+status: 1
+tags: []
+user_id: unknown
