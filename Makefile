@@ -86,3 +86,31 @@ list_trigger:
 
 describe_trigger:
 	gcloud scheduler jobs describe ${JOB_NAME}
+
+
+PROJECT_ID = big-elysium-337813
+
+BUCKET_NAME = wagon-data-805-saville
+
+REGION = europe-west2
+
+set_project:
+	@gcloud config set project ${PROJECT_ID}
+
+create_bucket:
+	@gsutil mb -l ${REGION} -p${PROJECT_ID} gs://${BUCKET_NAME}
+
+
+# path to the file to upload to GCP (the path to the file should be absolute or should match the directory where the make command is ran)
+# replace with your local path to the `train_1k.csv` and make sure to put the path between quotes
+LOCAL_PATH= "/home/jack10saville/code/jack10saville/TaxiFareModel/raw_data"
+
+# bucket directory in which to store the uploaded file (`data` is an arbitrary name that we choose to use)
+BUCKET_FOLDER=data
+
+# name for the uploaded file inside of the bucket (we choose not to rename the file that we upload)
+BUCKET_FILE_NAME=$(shell basename ${LOCAL_PATH})
+
+upload_data:
+    # @gsutil cp train_1k.csv gs://wagon-ml-my-bucket-name/data/train_1k.csv
+    @gsutil cp ${LOCAL_PATH} gs://${BUCKET_NAME}/${BUCKET_FOLDER}/${BUCKET_FILE_NAME}
